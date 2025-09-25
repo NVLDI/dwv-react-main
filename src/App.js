@@ -10,7 +10,10 @@ import Stack from '@mui/material/Stack';
 import LinearProgress from '@mui/material/LinearProgress';
 import Slider from '@mui/material/Slider';
 import Paper from '@mui/material/Paper';
-
+import StlViewer from "./StlViewer";
+import PlyViewer from "./PlyViewer";
+import ObjViewer from "./ObjViewer";
+import ImageViewer from './ImageViewer';
 // Icons
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import LayersIcon from '@mui/icons-material/Layers';
@@ -447,95 +450,67 @@ export default function App() {
             )}
       
           
-          {/* Three simultaneous views layout */}
-          <Grid container spacing={1} sx={{ flexGrow: 1, px: 2, pb: 2 }}>
-            <Grid item xs={12} md={4}>
-              <DwvComponent 
-                viewerId="viewer1"
-                layerGroupId="layerGroup0" 
-                title="Axial View"
-                defaultOrientation="axial"
-                sharedFiles={sharedFiles}
-                onLoadComplete={handleLoadComplete}
-                onProgressUpdate={handleProgressUpdate}
-                onSliceInfoUpdate={handleSliceInfoUpdate}
-                onIndividualSliceChange={handleIndividualSliceChange}
-                viewIndex={0}
-                
-              />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <DwvComponent 
-                viewerId="viewer2"
-                layerGroupId="layerGroup1" 
-                title="Sagittal View"
-                defaultOrientation="sagittal"
-                sharedFiles={sharedFiles}
-                onLoadComplete={handleLoadComplete}
-                onProgressUpdate={handleProgressUpdate}
-                onSliceInfoUpdate={handleSliceInfoUpdate}
-                onIndividualSliceChange={handleIndividualSliceChange}
-                viewIndex={1}
-              />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <DwvComponent 
-                viewerId="viewer3"
-                layerGroupId="layerGroup2" 
-                title="Coronal View"
-                defaultOrientation="coronal"
-                sharedFiles={sharedFiles}
-                onLoadComplete={handleLoadComplete}
-                onProgressUpdate={handleProgressUpdate}
-                onSliceInfoUpdate={handleSliceInfoUpdate}
-                onIndividualSliceChange={handleIndividualSliceChange}
-                viewIndex={2}
-              />
-            </Grid>
-          </Grid>
-          
-          {/* Instructions overlay when no files loaded */}
-          {!sharedFiles && !isLoading && (
-            <Box
-              sx={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              textAlign: 'center',
-              p: 4,
-              bgcolor: 'background.paper',
-              borderRadius: 2,
-              boxShadow: 3,
-              maxWidth: '90vw',
-              zIndex: 1000
-            }}
-            >
-              <FolderOpenIcon sx={{ fontSize: 48, color: 'text.secondary', mb: 2 }} />
-              <Typography variant="h6" gutterBottom>
-                Import DICOM Files
-              </Typography>
-              <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
-                Click "Import DICOM Files" button above<br />
-                or drag and drop DICOM files anywhere on this page
-              </Typography>
-              <Typography variant="body1" color="primary" sx={{ fontWeight: 'bold' }}>
-                🎚️ Use the <strong>Global Slider</strong> to navigate all views together
-              </Typography>
-              <Typography variant="body1" color="primary" sx={{ fontWeight: 'bold', mt: 1 }}>
-                🖱️ Hold <strong>Ctrl + Scroll</strong> to navigate all views together
-              </Typography>
-              <Typography variant="body1" color="primary" sx={{ fontWeight: 'bold', mt: 1 }}>
-                ⌨️ Use <strong>Arrow Keys</strong> to navigate all views together
-              </Typography>
-              <Typography variant="body1" color="primary" sx={{ fontWeight: 'bold', mt: 1 }}>
-                🖱️ Use <strong>Mouse Scroll</strong> to navigate individual views
-              </Typography>
-              <Typography variant="caption" color="textSecondary">
-                Perfect for comparing the same slice across orientations
-              </Typography>
-            </Box>
-          )}
+         {/* Viewers layout */}
+<Grid container spacing={1} sx={{ flexGrow: 1, px: 2, pb: 2 }}>
+  {/* Row 1: DICOM views */}
+  <Grid item xs={12} md={4} sx={{ height: '85vh' }}>
+    <DwvComponent
+      viewerId="viewer1"
+      layerGroupId="layerGroup0"
+      title="Axial View"
+      defaultOrientation="axial"
+      sharedFiles={sharedFiles}
+      onLoadComplete={handleLoadComplete}
+      onProgressUpdate={handleProgressUpdate}
+      onSliceInfoUpdate={handleSliceInfoUpdate}
+      onIndividualSliceChange={handleIndividualSliceChange}
+      viewIndex={0}
+    />
+  </Grid>
+  <Grid item xs={12} md={4} sx={{ height: '85vh' }}>
+    <DwvComponent
+      viewerId="viewer2"
+      layerGroupId="layerGroup1"
+      title="Sagittal View"
+      defaultOrientation="sagittal"
+      sharedFiles={sharedFiles}
+      onLoadComplete={handleLoadComplete}
+      onProgressUpdate={handleProgressUpdate}
+      onSliceInfoUpdate={handleSliceInfoUpdate}
+      onIndividualSliceChange={handleIndividualSliceChange}
+      viewIndex={1}
+    />
+  </Grid>
+  <Grid item xs={12} md={4} sx={{ height: '85vh' }}>
+    <DwvComponent
+      viewerId="viewer3"
+      layerGroupId="layerGroup2"
+      title="Coronal View"
+      defaultOrientation="coronal"
+      sharedFiles={sharedFiles}
+      onLoadComplete={handleLoadComplete}
+      onProgressUpdate={handleProgressUpdate}
+      onSliceInfoUpdate={handleSliceInfoUpdate}
+      onIndividualSliceChange={handleIndividualSliceChange}
+      viewIndex={2}
+    />
+  </Grid>
+
+  {/* Row 2: STL + PLY viewers */}
+  <Grid item xs={12} md={4} sx={{ height: '70vh' }}>
+    <StlViewer />
+  </Grid>
+  <Grid item xs={12} md={4} sx={{ height: '70vh' }}>
+    <PlyViewer />
+  </Grid>
+  <Grid item xs={12} md={4} sx={{ height: '70vh' }}>
+  <ObjViewer />
+</Grid>
+ <Grid item xs={12} md={4} sx={{ height: '70vh' }}>
+    <ImageViewer />
+  </Grid>
+</Grid>         
+         
         </Box>
       </ThemeProvider>
     );
