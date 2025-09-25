@@ -3962,13 +3962,13 @@ duplexer@^0.1.2:
   resolved "https://registry.npmjs.org/duplexer/-/duplexer-0.1.2.tgz"
   integrity sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==
 
-dwv@0.34.1:
-  version "0.34.1"
-  resolved "https://registry.npmjs.org/dwv/-/dwv-0.34.1.tgz"
-  integrity sha512-ppCBvAtt4KSz3sxENekf9+5hbc+hnl/jmnxK51zJTWUesR1ibQfwtshze81bunW4AvJvwWqSBwQfEaAcsZlGgA==
+dwv@0.35.1:
+  version "0.35.1"
+  resolved "https://registry.yarnpkg.com/dwv/-/dwv-0.35.1.tgz#b3c5d58de860d9bbb7927182255eb80fd747a1cb"
+  integrity sha512-Y3ZbvTihXUYVcn7DzwXaXpABuNLiw4BOi5Xzcurb0nxf/9ooPfYnyxahVrGEuCSRG1LySsNzRuPtZDvL6F0J0w==
   dependencies:
     jszip "^3.10.1"
-    konva "~9.3.16"
+    konva "~9.3.20"
     magic-wand-tool "~1.1.7"
 
 ee-first@1.1.1:
@@ -4732,15 +4732,9 @@ fs.realpath@^1.0.0:
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
 
 fsevents@^2.3.2, fsevents@~2.3.2:
-<<<<<<< HEAD
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
-=======
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
->>>>>>> d82a0d947c835301223d82cc1c627946f6d3619d
 
 function-bind@^1.1.1, function-bind@^1.1.2:
   version "1.1.2"
@@ -6183,10 +6177,10 @@ klona@^2.0.4, klona@^2.0.5:
   resolved "https://registry.npmjs.org/klona/-/klona-2.0.5.tgz"
   integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
 
-konva@~9.3.16:
-  version "9.3.16"
-  resolved "https://registry.npmjs.org/konva/-/konva-9.3.16.tgz"
-  integrity sha512-qa47cefGDDHzkToGRGDsy24f/Njrz7EHP56jQ8mlDcjAPO7vkfTDeoBDIfmF7PZtpfzDdooafQmEUJMDU2F7FQ==
+konva@~9.3.20:
+  version "9.3.22"
+  resolved "https://registry.yarnpkg.com/konva/-/konva-9.3.22.tgz#aa979c410127dda20bf0788ab70a414648c25a91"
+  integrity sha512-yQI5d1bmELlD/fowuyfOp9ff+oamg26WOCkyqUyc+nczD/lhRa3EvD2MZOoc4c1293TAubW9n34fSQLgSeEgSw==
 
 language-subtag-registry@~0.3.2:
   version "0.3.22"
@@ -8943,14 +8937,6 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-<<<<<<< HEAD
-"typescript@^3.2.1 || ^4", "typescript@>= 2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
-  version "4.9.5"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
-  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
-
-=======
->>>>>>> d82a0d947c835301223d82cc1c627946f6d3619d
 unbox-primitive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/unbox-primitive/-/unbox-primitive-1.0.2.tgz"
